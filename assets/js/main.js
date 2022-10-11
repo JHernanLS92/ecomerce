@@ -75,12 +75,12 @@ const showProducts = () => {
   let fragment = ``
 
   items.forEach( producto => {
-      fragment += `
+      fragment+= `
       <div class="product-card" id="${producto.id}">
          <div class="div-img-product">
             <img src="${producto.image}" alt="" class="img-product">
-            <i class='bx bx-plus-circle' ></i>
           </div>
+          <i class='bx bx-plus-circle bx-md btnAdd' ></i>
           <div clas="info-product">
             <p>${producto.price}" | Stock:" ${producto.quantity}</p>
             <p>${producto.name}</p>
@@ -91,17 +91,65 @@ const showProducts = () => {
   })
 
   productContainer.innerHTML = fragment
+  cartFunctionality()
 
+}
+function cartFunctionality(){
+  const btns = document.querySelectorAll(".btnAdd")
+  const cart = []
+  btns.forEach( button => {
+    button.addEventListener("click", e => {
+      const id = parseInt(e.target.parentElement.id)
+      const selectedProduct = items.find(item => item.id === id)
+      let index = cart.indexOf( selectedProduct )
+      if( index !== -1 ){
+        if( cart[index].quantity <= cart[index].cantidad ){
+          alert("No hay stock")
+      }else{ 
+        
+        cart[index].cantidad++
+       
+      }
+      
+      }else{
+        selectedProduct.cantidad = 1
+        cart.push( selectedProduct )
+            }
+            //console.log(cart);
+            showProductsInCart( cart )
+           
+        })
+  })
+}
+const showProductsInCart = () => {
+  const cartContainerSelected = document.getElementById("product-selected")
+  
+  let fragment = ``
+  items.forEach( prod => {
+    if( prod.cantidad !== undefined){
+      
+      fragment+= `
+      <div class="cartProd" id="${prod.id}">
+         <div class="div-img-product">
+            <img src="${prod.image}" alt="" class="img-product">
+            <p>Cantidad: ${prod.cantidad}</p>
+          </div>
+      </div>
+      <br>
+       `
+      
+    }
+    
+    })
+    cartContainerSelected.innerHTML = fragment
+    //cartFunctionality()
 
 }
 
 
-
-
-
 /**Esta funcion ejecuta las funciones al cargar la pagina */
 document.addEventListener( "DOMContentLoaded", () =>{
-  loadComponent()  //imagen cargando
+  loadComponent() 
   showProducts()
 })
 
