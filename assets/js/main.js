@@ -88,15 +88,16 @@ const showProducts = () => {
   items.forEach( producto => {
       fragment+= `
       <div class="product-card" id="${producto.id}">
-         <div class="div-img-product">
+         <div class="div-img-product-main">
             <img src="${producto.image}" alt="" class="img-product">
           </div>
 
-          <i class='bx bx-plus-circle bx-md btnAdd' ></i>
+          <i class='bx bx-plus-circle bx-md btnAdd-main' ></i>
 
           <div clas="info-CardProduct">
-            <p>$ ${producto.price}.00 | Stock: ${producto.quantity}</p>
-            <p>${producto.name}</p>
+            <h2 clas="h-cardProduct">$ ${producto.price}.00</h2>
+            <h2 clas="h-cardProduct">Stock: ${producto.quantity}</h2>
+            <h2 clas="h-cardProduct">${producto.name}</h2>
           </div>
 
       </div>
@@ -109,7 +110,7 @@ const showProducts = () => {
 
 }
 function cartFunctionality(){
-  const btns = document.querySelectorAll(".btnAdd")
+  const btns = document.querySelectorAll(".btnAdd-main")
   const cart = []
   btns.forEach( button => {
     button.addEventListener("click", e => {

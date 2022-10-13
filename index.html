@@ -9,6 +9,7 @@
     <title>Academlo Store</title>
 </head>
 <body>
+
   <!--Imagen de cargado de la pagina-->
   <div id="loader" class="loader">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="loader--img">
@@ -27,9 +28,10 @@
 </div>
 
     
- <!--Barra de navegacion|-->
-<nav class="nav">
+ <!-- ================= Barra de navegacion===================== -->
+<nav class="nav container">
 
+ <!-- ================= Seccion logo y titulo ===================== -->
   <section class="logo-home">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="logo">
         <title>Academlo Logo</title>
@@ -41,71 +43,70 @@
           </g>
         </g>
     </svg>
-    <h3>STORE</h3>
+    <h2>STORE</h2>
+    <div class="menuNav">
+      <li>Home</li>
+      <li>Products</li>
+     </div>
   </section>  
-  <div class="menuNav">
-    <li>Home</li>
-    <li>Products</li>
-</div>
+<!-- ================= Seccion de botones del menu  ===================== -->
   <section class="nav-menu">
 
-    <i class='bx bx-moon bx-md' id="theme-btn"></i>
+    <i class='bx bx-moon bx-md' id="theme-btn"></i><!-- btn nocturno  -->
 
     <div id="cart-shop" class="nav--cart">
-      <i class='bx bx-shopping-bag bx-md'></i>
+      <i class='bx bx-shopping-bag bx-md'></i> <!-- btn carrito  -->
       <span id="cart-counter" class="counter">0</span>
     </div>
 
-
-<!--Menu desplegable-->
   <div class="menuArea" id="menuArea">
-    <i class='bx bx-menu-alt-right bx-md btn-menu'></i>
+    <i class='bx bx-menu-alt-right bx-md btn-menu'></i><!-- btn menu  -->
   </div>
 
   </section>
 </nav>
-
+<!-- ================= div menu oculto  ===================== -->
 <div class="menu-cont hide" id="menu-container">
       <div class="x--menu" id="xmenu"> 
         <i class='bx bxs-x-square'></i>
       </div>
-  <ul>
+  <ul class="menu-desplegable">
     <li><a href="">Home</a></li>
     <li><a href="">Products</a></li>
   </ul>
 </div>
 
 
-<!-- Contenedor del carrito -->
+<!-- ================= div carrito oculto  ===================== -->
 <div class="cart--container hide" id="cart-container">
 
-  <div class="cart" id="cart">
-    
-  <div class="close--cart" id="close--cart"> 
-      <i class='bx bxs-x-square'></i>
-  </div>
-
-  <section id="product-selected"> </section>
-
-  <section class="totales">
-        
-    
-    <div class="totalProduct">
-        <p>Products: </p>
-        <p>
-          <span id="totalProduct">0</span> 
-        </p>
+    <div class="cart" id="cart">
+      
+    <div class="close--cart" id="close--cart"> 
+        <i class='bx bxs-x-square'></i>
     </div>
-    
-    <div class="totalPrice">
-        <p>Total: </p>
-        <p>
-          $
-          <span id="totalMoney">0</span> 
-          .00
-        </p>
-    </div> 
-</section>
+
+    <section id="product-selected"> </section>
+
+    <section class="totales">
+      
+          <div class="totalProduct">
+              <p>Products: </p>
+              <p>
+                <span id="totalProduct">0</span> 
+              </p>
+          </div>
+          
+          <div class="totalPrice">
+              <p>Total: </p>
+              <p>
+                $
+                <span id="totalMoney">0</span> 
+                .00
+              </p>
+          </div> 
+
+    </section>
   
   </div>
    
@@ -116,32 +117,32 @@
 
 
 
-<!-- Contenido principal -->
+<!-- ================= Main contenedor  ===================== -->
 <main class="container">
-  <!-- imagen dentro de color -->
+ 
   <section class="first-img">
-    <!--Contenedor de imagen principal-->
-    <div class="img-container">
-      <img src="./assets/images/featured2.png" alt="">
-    </div>
 
-    <section class="text-container">
-      <div class="text">
-        <h2>New Sweatshirt <br>
-          COLLECTIONS 2022
-        </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nesciunt?</p>
-      </div>
-      <div class="text-red">
-        <h2>$14.00</h2>
-      </div>
-    
-      <div class="buttons">
-        <div class="discBtn">Discover</div>
-        <div class="addBtn btn-add">ADD TO CART</div>
+      <div class="img-container">
+          <img src="./assets/images/featured2.png" alt="" class="img-first">
       </div>
 
-    </section>
+      <section class="text-container">
+          <div class="text">
+              <h2>New Sweatshirt <br>
+                COLLECTIONS 2022
+              </h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nesciunt?</p>
+          </div>
+          <div>
+              <h2 class="text-price">$14.00</h2>
+          </div>
+        
+          <div class="buttons">
+              <div class="discBtn">Discover</div>
+              <div class="addBtn btn-add">ADD TO CART</div>
+          </div>
+
+      </section>
     
   </section>
 
@@ -177,7 +178,7 @@
 </main>
 
 <footer  >
-  <div class="foot container">
+  <div class="container foot">
     <section class="sectionContain">
       <h4>Our information</h4>
      <ul>

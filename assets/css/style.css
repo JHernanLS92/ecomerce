@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
+  border: solid .5px
 }
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
@@ -25,7 +25,22 @@
   --body-font: 'Roboto', sans-serif;
 }
 
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark{
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%, .5);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+}
 
+/*========================================*/
+/*========== Etiquetas del html ==========*/
 body{
   color: var(--text-color);
   font-family: var(--body-font);
@@ -45,38 +60,6 @@ h2, h3{
   font-weight: 500;
   background-color: var(--body-color);
 }
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-body.dark{
-    --first-color: hsl(182, 53%, 74%);
-    --button-color: hsl(246, 16%, 12%);
-    --button-color-alt: hsl(0, 0%, 28%);
-    --card-color: hsla(246, 16%, 5%, .5);
-    --title-color: hsl(0, 0%, 95%);
-    --text-color: hsl(0, 0%, 75%);
-    --body-color: hsl(249, 19%, 14%);
-    --container-color: hsl(246, 16%, 12%);
-    --border-color: hsl(0, 0%, 20%);
-}
-/*------- Centrado de contenedores ------------*/
-.container {
-  width: 100%;
-  min-width: 300px;
-  margin: 0 auto;
-}
-
-
-
-/*-----------menu ---------------------------*/
-.menu-cont{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(144, 140, 140, 0.658);
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 10;
-}
 a{
   text-decoration: none;
   font-size: 20px;
@@ -84,38 +67,25 @@ a{
   padding-top: 5rem;  
   
 }
-.menu-cont.hide{
-  display: none;
-}
-.menu-cont>ul{
+li{
   list-style: none;
-  width: 100%;
-  height: 100%;
-  background-color: var(--body-color);
-  position: absolute;
-  display: flex;
-  padding-top: 2rem;
-  gap: 3rem;
-  flex-direction: column;
-  top: 0;
-  min-width: 300px;
-  max-width: 300px;
-  right: 0;
-  box-shadow: -4px 5px 10px rgb(147 147 147);
-  text-align: center;
-  text-decoration: none;
-  text-decoration: none;
+  cursor: pointer;
 }
-.x--menu{
-  font-size: 2rem;
-  position: absolute;
-  top: .5rem;
-  right: 2rem;
-  color: var(--first-color);
-  z-index: 100;
+footer{
+  background-color: var(--container-color);
+  margin-top: 5rem;
 }
 
-/*------------- Imagen carga----------*/
+/*========================================*/
+/*========== Contenedor global ===========*/
+.container {
+  width: 100%;
+  max-width: 300px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+/*========================================*/
+/*========== logo de carga ============*/
 .loader{
   background-color: whitesmoke;
   width: 100%;
@@ -139,27 +109,22 @@ a{
   position: relative;
   animation: load 1.5s infinite;
 }
-
-
-
-/*-------Barra navegacion -------------*/
+/*========================================*/
+/*========== Barra Navegacion ============*/
 .nav {
   height: 60px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
   color: var(--title-color);
   background-color: var(--container-color);
-  padding: 1rem;
-  min-width: 300px;
+  padding: 2rem;
   margin: 0 auto;
-  max-width: 800px;
 }
-/* Seccion del logo */
 .logo-home{
-  width: 100%;
+  width: 59%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -167,15 +132,18 @@ a{
   justify-content: start;
   z-index: 2;
 }
- .logo{
-  width: 60px;
+.logo{
+  width: 50px;
   fill: var(--first-color);
   z-index: 2;
  }
 
- /* Seccion del menu-tema-cart*/
- .nav-menu {
-  width: 100%;
+.menuNav{
+  display: none;
+}
+.nav-menu {
+  width: 80%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -202,179 +170,107 @@ a{
   position: absolute;
   bottom: -5px;
   right: -5px;
- }
-
-
-/*----Seccion del contenedorCarrito ------*/
- .cart--container{
+ }/*
+ .menuArea{
+  display: flex;Ocultar btn menu
+}*/
+/*========================================*/
+/*========== Div menu oculto =============*/
+.menu-cont{
   width: 100%;
   height: 100%;
   background-color: rgba(144, 140, 140, 0.658);
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 10;
+  right: 0;
+  z-index: 100;
+}
+.menu-cont.hide{
+  display: none;
+}
+.x--menu{  /* btn cerrar menu*/
+  font-size: 2rem;
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  color: var(--first-color);
+  z-index: 100;
+}
+.menu-desplegable{
+  list-style: none;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  background-color: var(--body-color);
+  position: absolute;
+  display: flex;
+  padding-top: 5rem;
+  gap: 3rem;
+  flex-direction: column;
+  box-shadow: -4px 5px 10px rgb(147 147 147);
+  text-align: center;
+  text-decoration: none;
+  right: 0;
+}
+/*========================================*/
+/*======= Div Contenedor Carrito =========*/
+.cart--container{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(144, 140, 140, 0.658);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
 }
 .cart--container.hide{
   display: none;
 }
-
 .cart{
+  list-style: none;
   width: 100%;
+  max-width: 300px;
   height: 100%;
   background-color: var(--body-color);
   position: absolute;
-  top: 0;
-  min-width: 300px;
-  max-width: 400px;
-  right: 0;
-  box-shadow: -4px 5px 10px rgb(147 147 147);
   display: flex;
+  padding-top: 5rem;
+  gap: 3rem;
   flex-direction: column;
+  box-shadow: -4px 5px 10px rgb(147 147 147);
+  text-align: center;
+  text-decoration: none;
+  right: 0;
 }
 
 .close--cart{
   font-size: 2rem;
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: .5rem;
+  right: 1rem;
   color: var(--first-color);
+  z-index: 100;
 }
-
-
-/*---- Tarjeta de producto -------*/
-.first-img{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.img-container{
-  position: relative;
-  background-color: var(--first-color);
-  left: 20%;
-  top: -60px;
-  z-index: 1;
-  width: 50%;
-  padding-top: 60px;
-}
-.img-container>img{
-  width: 100%;
-  height: 100%;
-}
-.text-container{
-  left: 10px;
-    position: relative;
-    top: 20px;
-}
-.text{
-  margin-bottom: 2rem;
-  width: 100%;
-  height: auto;
-}
-.text>h2{
-  font-weight: 700;
-}
-.price{
-  margin-bottom: 2rem;
-  width: 100%;
-  height: auto;
-}
-.price>h2{
-  color: var(--first-color);
-}
-
-/*------ Botones ------------------*/
-.buttons{
-  display: flex;
-  margin-bottom: 2rem;
-  width: 100%;
-}
-.discBtn{
-  width: 100px;
-  padding-top: .5rem;
-  height: 40px;
-  color: var(--title-color);
-  background-color: var(--text-color-light);
-  font-weight: 700;
-  text-align: center;
-  margin-top: 3px;
-}
-.addBtn{
-  width: 150px;
-  padding-top: 1rem;
-  height: 50px;
-  color: whitesmoke;
-  font-weight: 700;
-  text-align: center;
-  background-color: var(--button-color);
-}
-
-/*---- Tarjeta de producto --------*/
-
+/*========================================*/
+/*== Productos Seleccionados Carrito =====*/
 .product-selected{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  margin-top: 60px;
-}
-
-.product-card{
-  padding: 0.5rem;
-  border: 1px lightslategray;
-  /*box-shadow: -3px 5px 10px rgb(147 147 147);*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around; 
+  width: 100%;
   margin: 0 auto;
-  width: 250px;
-  max-width: 400px;
-  height: 450px;
-  background-color:var(--body-color) ;
-  border-radius: 10px;
-  border: var(--border-color);
 }
-.div-img-product{
-  width: 100%;
-  height: 10px;
-}
-.img-product{
-  width: 100%;
-}
-.info-CardProduct{
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
-}
-.btnAdd{
-  position: relative;
-  margin-right: -200px;
-  color:  var(--text-color-light);
-  border-radius: 50%;
-  top:0;
-
-}
-
-
-
-
-/*--Carrito lista*/
 .cartProd{
   position: relative;
   border: 1px  lightslategray;
-  box-shadow: -3px 5px 10px rgb(147 147 147);
   display: flex;
   flex-direction:row;
   align-items: center;
   justify-content: center; 
+  width: 100%;
+  max-width: 250px;
+  height: 150px;
   left: 1rem;
-  top: 1rem;
-  width: 300px;
-  max-width: 300px;
-  height: 200px;
   background-color: var(--body-color);
 }
 .cartProd-total{
@@ -392,14 +288,49 @@ a{
   height: 200px;
   background-color: var(--body-color);
 }
-.text-red{
-  color: var(--first-color);
+.div-img-product-cart{
+  font-size: 18px;
+  background-color:var(--container-color) ;
 }
-.cart-info{
+.img-cartProduct{
+  background-color: var(--body-color);
+  width: 100px;
+ }
+ .cart-info{
   font-size: 18px;
   color: var(--text-color);
   width: 160px;
-}.cart-info-total{
+}
+.price{
+  margin-bottom: 2rem;
+  width: 100%;
+  height: auto;
+}
+.text-red{
+  color: var(--first-color);
+}
+/*========================================*/
+/*=== Seccion de los totales carrito =====*/
+.totales{
+  width: 100%;
+    height: 20px;
+    font-size: 18px;
+    position: absolute;
+    top: 80%;
+   padding: 2rem;
+    color: var(--first-color);
+    display: flex;
+    justify-content: space-between;
+}
+ .totalProduct{
+  display: flex;
+  justify-content: space-between;
+ }
+ .totalPrice{
+  display: flex;
+  justify-content: space-between;
+ }
+ .cart-info-total{
   font-size: 18px;
   color: var(--text-color);
   width: 100%;
@@ -408,12 +339,65 @@ a{
  background-color: var(--body-color);
  width: 100px;
 }
-.div-img-product-cart{
-  font-size: 18px;
-  background-color:var(--container-color) ;
-  /*box-shadow: -3px 5px 10px rgb(147 147 147);*/
+/*========================================*/
+/*====== Seccion del main principal ======*/
+.first-img{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-/*--------- Listas de filtrado---------*/
+.img-container{  /*Color de la imagen central*/
+  position: relative;
+  background-color: var(--first-color);
+  right: 0;
+  width: 100%;
+  max-width: 140px;
+  height: 300px;
+  top: -60px;
+  padding-top: 60px;
+  left: 23%;
+}
+.img-first{
+  width: 100%;
+  height: 100%;
+}
+.text-container{
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+}
+.text-price{
+  color: var(--first-color);
+}
+.buttons{
+  display: flex;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 300px;
+}
+.discBtn{
+  width: 100px;
+  padding-top: .5rem;
+  height: 35px;
+  color: var(--title-color);
+  background-color: var(--text-color-light);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 3px;
+}
+.addBtn{
+  width: 100%;
+  padding-top: .75rem;
+  height: 45px;
+  color: whitesmoke;
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--button-color);
+}
+/*========================================*/
+/*== Seccion del main productos filtrado ==*/
 .cont-products{
   display: flex;
   justify-content: space-around;
@@ -443,25 +427,62 @@ a{
 .sweatshirts{
   grid-area: sweatshirts ;
 }
-/*--------- Footer -----------------*/
-footer{
-  background-color: var(--container-color);
-  margin-top: 5rem;
+/*========================================*/
+/*======= Productos auto agregados =======*/
+.product-card{
+  position: relative;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border: 1px lightslategray;
+  border-radius: 10px;
+  border: var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; 
+  width: 250px;
+  max-width: 400px;
+  height: 450px;
+  background-color:var(--body-color) ;
+ 
 }
+.div-img-product-main{
+  width: 100%;
+  background-color: var(--card-color);
+}
+.btnAdd-main{
+  position: absolute;
+  /* left: 0; */
+  right: 40px;
+  color: var(--text-color-light);
+  border-radius: 50%;
+  top: 250px;
+}
+.img-product{
+  width: 100%;
+}
+.info-CardProduct{
+  width: 100%;
+  max-width: 250px;
+}
+.h-cardProduct{
+  font-size: 15px;
+}
+/*========================================*/
+/*======= Productos auto agregados =======*/
 .foot{
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  margin: 0 40%;
-  width: 100%;
-  background-color: var(--container-color);
+  margin: 0 auto;
+  width: 50%;
   height: 100%;
   
 }
 .sectionContain{
-  width: 100%;
+  width: 80%;
   height: auto;
   text-align: left;
  margin:  auto;
@@ -469,41 +490,10 @@ footer{
 }
 .social>i{
  gap: 3rem;
- 
  cursor: pointer;
 }
-li{
-  list-style: none;
-  cursor: pointer;
-}
-
-.totales{
-  width: 100%;
-    height: 20px;
-    font-size: 18px;
-    position: absolute;
-    top: 80%;
-   padding: 2rem;
-    color: var(--first-color);
-    display: flex;
-    justify-content: space-between;
-}
- .totalProduct{
-  display: flex;
-  justify-content: space-between;
- }
- .totalPrice{
-  display: flex;
-  justify-content: space-between;
- }
-.menuNav{
-  display: none;
-}
-
-
-
-
-/*Aqui se hace la animacion de la imagen de cargado*/
+/*========================================*/
+/*======= Animacion carga inicio =========*/
  @keyframes load{
   0%{
       top: 0;
@@ -515,127 +505,19 @@ li{
       top: 0;
   }
 }
-
-i:hover{
+/*========================================*/
+/*=========== Hovers =====================*/
+i, li, .buttons, .showall, .hoodies, .sweatshirts:hover{
   cursor: pointer;
 }
-@media screen and (min-width: 650px) {
-  .container{
+@media screen and (min-width: 668px) {
+  .container {
+    width: 100%;
     max-width: 500px;
-  }
-  .img-container{
-
-    left: 40%;
-   
-  }
-  .btnAdd{
-    top: 87px;
-  }
-  .menu-con>ul{
-    justify-content: left;
-    left: -61px;
+    min-width: 300px;
+    margin: 0 auto;
   }
 }
-@media screen and (min-width: 850px) {
-  .container{
-    max-width: 800px;
-  }
-  .img-container{
-    width: 50%;
-    left: 30%;
-  
-  }
-  .nav{
-    max-width: 900px;
-  }
-  .menu-cont{
-    width: 50px;
-    height: 60px;
-    background-color: var(--body-color);
-    position: absolute;
-    left: 25%;
-    z-index: 0;
-  }
+@media screen and (min-width: 992px) {
  
-  .menu-cont.hide{
-    display: flex;
-  }
-  .menu-cont>ul{
-    display: none;
-  }
-  .x--menu{
-    display: none;
-  }
-  .menuArea{
-    display: none;
-  }
-  .text-container{
-    left: -210px;
-    position: relative;
-    top: -350px;
-  }
-  .first-img{
-    position: relative;
-    left: 0;
-  }
-  .product-lsit{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-  }
-  .contain-filter{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    gap: 1rem;
-  }
-  .hoodies{
-    grid-area: hoodies ;
-  }
-  .shirts{
-    grid-area: shirts ;
-  }
-  .sweatshirts{
-    grid-area: sweatshirts ;
-  }
-  .discBtn{
-    width: 200px;
-    height: 50px;
-  }
-  .addBtn{
-    width:300px;
-    height: 60px;
-  }
-  #products-list{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    
-  }
-  .info-CardProduct{
-    display: flex;
-    justify-content: space-around;
-  }
-  .foot{
-    margin: 0 auto;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    background-color: var(--container-color);
-    padding: 0;
-  }
-  .social>i{
-    gap: 3rem;
-    display: inline-block;
-  }
-  .menuNav{
-    display: flex;
-    position: relative;
-    left: -170px;
-    gap: 2rem;
-    z-index: 2;
-  }
 }
