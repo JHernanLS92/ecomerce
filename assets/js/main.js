@@ -51,7 +51,18 @@ const themeIcon = document.getElementById( "theme-btn" )
     themeIcon.classList.replace( "bx-sun", "bx-moon" )
   }
 })
+/*----------------------- MENU -----------------*/
+const menu = document.getElementById("menu-container")
+const menuIcon = document.getElementById("menuArea")
+const xCloseIcon = document.getElementById("xmenu")
 
+//agregar y quitar la clase hide para cerrar y abrir carrito 
+menuIcon.addEventListener("click", () => {
+  menu.classList.remove("hide") 
+})
+xCloseIcon.addEventListener( "click", () => {
+  menu.classList.add("hide")
+})
 
 /*----------------------- Carrito de compras -----------------*/
 const cart = document.getElementById("cart-container")
@@ -80,13 +91,16 @@ const showProducts = () => {
          <div class="div-img-product">
             <img src="${producto.image}" alt="" class="img-product">
           </div>
+
           <i class='bx bx-plus-circle bx-md btnAdd' ></i>
-          <div clas="info-product">
-            <p>${producto.price}" | Stock:" ${producto.quantity}</p>
+
+          <div clas="info-CardProduct">
+            <p>$ ${producto.price}.00 | Stock: ${producto.quantity}</p>
             <p>${producto.name}</p>
           </div>
+
       </div>
-      <br>
+     
        `
   })
 
@@ -123,29 +137,45 @@ function cartFunctionality(){
 }
 const showProductsInCart = () => {
   const cartContainerSelected = document.getElementById("product-selected")
-  
+  const cartTotal = document.getElementById("totalMoney")
+  const cartCantidad = document.getElementById("totalProduct")
+  const cartCantidadShoppinBag = document.getElementById("cart-counter")
+
+  let total = 0
   let fragment = ``
+  let cantidad = 0
   items.forEach( prod => {
     if( prod.cantidad !== undefined){
       
       fragment+= `
       <div class="cartProd" id="${prod.id}">
-         <div class="div-img-product">
-            <img src="${prod.image}" alt="" class="img-product">
-            <p>Cantidad: ${prod.cantidad}</p>
+         <div class="div-img-product-cart">
+            <img src="${prod.image}" alt="" class="img-cartProduct">
+            
           </div>
-      </div>
-      <br>
-       `
-      
+          <div class= "cart-info">
+            <h4>${prod.name}</h4>
+            <p>Stock: ${prod.quantity - prod.cantidad}</p> 
+            <p id ="price" class=" price txt-red"> $${prod.price}.00</p>
+            <p class="text-red">Subtotal: $${prod.cantidad * prod.price}.00</p>
+          </div>
+      </div>  `
+         
+       total+= prod.cantidad *prod.price
+      cantidad+= prod.cantidad
+
     }
-    
+
+
     })
+
+
+    cartCantidadShoppinBag.innerHTML= cantidad
+    cartCantidad.innerHTML = cantidad
+    cartTotal.innerHTML = total
     cartContainerSelected.innerHTML = fragment
-    //cartFunctionality()
-
+   
 }
-
 
 /**Esta funcion ejecuta las funciones al cargar la pagina */
 document.addEventListener( "DOMContentLoaded", () =>{
@@ -154,3 +184,4 @@ document.addEventListener( "DOMContentLoaded", () =>{
 })
 
 
+ 

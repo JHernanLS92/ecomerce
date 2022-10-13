@@ -25,6 +25,8 @@
         </g>
     </svg>
 </div>
+
+    
  <!--Barra de navegacion|-->
 <nav class="nav">
 
@@ -41,7 +43,10 @@
     </svg>
     <h3>STORE</h3>
   </section>  
-
+  <div class="menuNav">
+    <li>Home</li>
+    <li>Products</li>
+</div>
   <section class="nav-menu">
 
     <i class='bx bx-moon bx-md' id="theme-btn"></i>
@@ -51,34 +56,63 @@
       <span id="cart-counter" class="counter">0</span>
     </div>
 
-    <i class='bx bx-menu-alt-right bx-md'></i>
-  </section>
 
- 
+<!--Menu desplegable-->
+  <div class="menuArea" id="menuArea">
+    <i class='bx bx-menu-alt-right bx-md btn-menu'></i>
+  </div>
+
+  </section>
 </nav>
+
+<div class="menu-cont hide" id="menu-container">
+      <div class="x--menu" id="xmenu"> 
+        <i class='bx bxs-x-square'></i>
+      </div>
+  <ul>
+    <li><a href="">Home</a></li>
+    <li><a href="">Products</a></li>
+  </ul>
+</div>
+
 
 <!-- Contenedor del carrito -->
 <div class="cart--container hide" id="cart-container">
 
   <div class="cart" id="cart">
     
-    <div class="close--cart" id="close--cart"> 
+  <div class="close--cart" id="close--cart"> 
       <i class='bx bxs-x-square'></i>
-
-      <section id="product-selected">
-   
-      </section>
-    </div>
-      
   </div>
- 
+
+  <section id="product-selected"> </section>
+
+  <section class="totales">
+        
+    
+    <div class="totalProduct">
+        <p>Products: </p>
+        <p>
+          <span id="totalProduct">0</span> 
+        </p>
+    </div>
+    
+    <div class="totalPrice">
+        <p>Total: </p>
+        <p>
+          $
+          <span id="totalMoney">0</span> 
+          .00
+        </p>
+    </div> 
+</section>
+  
+  </div>
+   
+  
 </div>
 
 
-<!--Contenedor de imagen principal-->
-<div class="img-container">
-  <img src="./assets/images/featured2.png" alt="">
-</div>
 
 
 
@@ -86,39 +120,94 @@
 <main class="container">
   <!-- imagen dentro de color -->
   <section class="first-img">
-    <div class="text">
-      <h2>New Sweatshirt <br>
-        COLLECTIONS 2022
-      </h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nesciunt?</p>
+    <!--Contenedor de imagen principal-->
+    <div class="img-container">
+      <img src="./assets/images/featured2.png" alt="">
     </div>
 
-    <div class="price">
-      <h2>$14.00</h2>
-    </div>
+    <section class="text-container">
+      <div class="text">
+        <h2>New Sweatshirt <br>
+          COLLECTIONS 2022
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nesciunt?</p>
+      </div>
+      <div class="text-red">
+        <h2>$14.00</h2>
+      </div>
+    
+      <div class="buttons">
+        <div class="discBtn">Discover</div>
+        <div class="addBtn btn-add">ADD TO CART</div>
+      </div>
 
-    <div class="buttons">
-      <div class="discBtn">Discover</div>
-      <div class="addBtn btn-add">ADD TO CART</div>
-    </div>
+    </section>
+    
   </section>
+
+
+  
+<section class="container cont-products">
+   
+  <div class="contain-filter container">
+      <section class="showall">
+        <h3>Show All</h3>
+        <p>Show all products</p>
+      </section>
+      <section class="hoodies">
+        <h3>Hoodies</h3>
+        <p>3 products</p>
+      </section>
+      <section class="shirts">
+        <h3>Shirts</h3>
+        <p>4 products</p>
+      </section>
+      <section class="sweatshirts">
+        <h3>Sweatshirts</h3>
+        <p>4 products</p>
+      </section>
+  </div>
+
   <!--Productos autogenerados-->
   <section id="products-list">
   </section>
 
+</section>
+
 </main>
 
-<footer >
-  <div class="container foot">
-    <section class="ourInfo">
-
+<footer  >
+  <div class="foot container">
+    <section class="sectionContain">
+      <h4>Our information</h4>
+     <ul>
+      <li>Toluca - México</li>
+     </ul>
     </section>
-    <section class="aboutUs">
-
-    </section><section class="product">
-
-    </section><section class="social">
-
+    <section class="sectionContain">
+      <h4>About Us</h4>
+      <ul>
+       <li>Support Center</li>
+       <li>customer Support</li>
+       <li>About Us</li>
+       <li>Copy Right</li>
+      </ul>
+    </section>
+    <section class="sectionContain">
+      <h4>Product</h4>
+      <ul>
+       <li>Hoodies</li>
+       <li>Shirts</li>
+       <li>Sweatshirts</li>
+      </ul>
+    </section>
+    <section class="sectionContain social">
+      <h4>Social</h4>
+      
+      <i class='bx bxl-facebook bx-md'></i>
+       <i class='bx bxl-twitter bx-md'></i>
+     <i class='bx bxl-instagram bx-md'></i>
+      
     </section>
   </div>
 </footer>

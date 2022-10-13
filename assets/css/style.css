@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /*border: 1px solid black*/
+
 }
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
@@ -62,10 +62,58 @@ body.dark{
 .container {
   width: 100%;
   min-width: 300px;
-  max-width: 800px;
   margin: 0 auto;
 }
 
+
+
+/*-----------menu ---------------------------*/
+.menu-cont{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(144, 140, 140, 0.658);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+a{
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--text-color);
+  padding-top: 5rem;  
+  
+}
+.menu-cont.hide{
+  display: none;
+}
+.menu-cont>ul{
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-color);
+  position: absolute;
+  display: flex;
+  padding-top: 2rem;
+  gap: 3rem;
+  flex-direction: column;
+  top: 0;
+  min-width: 300px;
+  max-width: 300px;
+  right: 0;
+  box-shadow: -4px 5px 10px rgb(147 147 147);
+  text-align: center;
+  text-decoration: none;
+  text-decoration: none;
+}
+.x--menu{
+  font-size: 2rem;
+  position: absolute;
+  top: .5rem;
+  right: 2rem;
+  color: var(--first-color);
+  z-index: 100;
+}
 
 /*------------- Imagen carga----------*/
 .loader{
@@ -106,6 +154,8 @@ body.dark{
   background-color: var(--container-color);
   padding: 1rem;
   min-width: 300px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 /* Seccion del logo */
 .logo-home{
@@ -115,12 +165,14 @@ body.dark{
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  
+  z-index: 2;
 }
  .logo{
   width: 60px;
   fill: var(--first-color);
+  z-index: 2;
  }
+
  /* Seccion del menu-tema-cart*/
  .nav-menu {
   width: 100%;
@@ -162,7 +214,6 @@ body.dark{
   top: 0;
   left: 0;
   z-index: 10;
- 
 }
 .cart--container.hide{
   display: none;
@@ -171,13 +222,15 @@ body.dark{
 .cart{
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: var(--body-color);
   position: absolute;
   top: 0;
   min-width: 300px;
   max-width: 400px;
   right: 0;
   box-shadow: -4px 5px 10px rgb(147 147 147);
+  display: flex;
+  flex-direction: column;
 }
 
 .close--cart{
@@ -191,22 +244,29 @@ body.dark{
 
 /*---- Tarjeta de producto -------*/
 .first-img{
-  padding: 0;
-  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .img-container{
+  position: relative;
   background-color: var(--first-color);
-  right: 0;
-  margin-top: -60px;
+  left: 20%;
+  top: -60px;
+  z-index: 1;
   width: 50%;
-  max-width: 300px;
-  margin-left: 50%;
-  height: 500px;
+  padding-top: 60px;
 }
 .img-container>img{
-  width: 90%;
-  height: 65%;
-  margin-top: 150px;
+  width: 100%;
+  height: 100%;
+}
+.text-container{
+  left: 10px;
+    position: relative;
+    top: 20px;
 }
 .text{
   margin-bottom: 2rem;
@@ -245,7 +305,7 @@ body.dark{
   width: 150px;
   padding-top: 1rem;
   height: 50px;
-  color: var(--container-color);
+  color: whitesmoke;
   font-weight: 700;
   text-align: center;
   background-color: var(--button-color);
@@ -253,57 +313,195 @@ body.dark{
 
 /*---- Tarjeta de producto --------*/
 
+.product-selected{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin-top: 60px;
+}
+
 .product-card{
-  padding: 1rem;
-  border: 1px solid lightslategray;
-  box-shadow: -3px 5px 10px rgb(147 147 147);
+  padding: 0.5rem;
+  border: 1px lightslategray;
+  /*box-shadow: -3px 5px 10px rgb(147 147 147);*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: space-around; 
   margin: 0 auto;
-  max-width: 300px;
-  height: 350px;
-  background-color: var(--container-color);
+  width: 250px;
+  max-width: 400px;
+  height: 450px;
+  background-color:var(--body-color) ;
+  border-radius: 10px;
+  border: var(--border-color);
+}
+.div-img-product{
+  width: 100%;
+  height: 10px;
 }
 .img-product{
   width: 100%;
- 
 }
-.info-product{
+.info-CardProduct{
   width: 100%;
-  height: 100px;
-  font-size: 100px;
+  height: 100%;
+  font-size: 20px;
 }
 .btnAdd{
   position: relative;
   margin-right: -200px;
-  color: var(--first-color);
+  color:  var(--text-color-light);
+  border-radius: 50%;
+  top:0;
+
 }
 
 
 
 
+/*--Carrito lista*/
 .cartProd{
-  padding: 1rem;
-  border: 1px solid lightslategray;
+  position: relative;
+  border: 1px  lightslategray;
   box-shadow: -3px 5px 10px rgb(147 147 147);
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   align-items: center;
   justify-content: center; 
-  margin: 0 auto;
+  left: 1rem;
+  top: 1rem;
+  width: 300px;
   max-width: 300px;
-  height: 350px;
-  background-color: var(--container-color);
+  height: 200px;
+  background-color: var(--body-color);
 }
-
+.cartProd-total{
+  position: relative;
+  border: 1px  lightslategray;
+  box-shadow: -3px 5px 10px rgb(147 147 147);
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center; 
+  left: 1rem;
+  top: 1rem;
+  width: 300px;
+  max-width: 300px;
+  height: 200px;
+  background-color: var(--body-color);
+}
+.text-red{
+  color: var(--first-color);
+}
+.cart-info{
+  font-size: 18px;
+  color: var(--text-color);
+  width: 160px;
+}.cart-info-total{
+  font-size: 18px;
+  color: var(--text-color);
+  width: 100%;
+}
+.img-cartProduct{
+ background-color: var(--body-color);
+ width: 100px;
+}
+.div-img-product-cart{
+  font-size: 18px;
+  background-color:var(--container-color) ;
+  /*box-shadow: -3px 5px 10px rgb(147 147 147);*/
+}
+/*--------- Listas de filtrado---------*/
+.cont-products{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.contain-filter{
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  grid-template-areas:
+  "showall hoodies"
+  "shirts  sweatshirts" ;
+}
+.shoall{
+  grid-area: showall ;
+}
+.hoodies{
+  grid-area: hoodies ;
+}
+.shirts{
+  grid-area: shirts ;
+}
+.sweatshirts{
+  grid-area: sweatshirts ;
+}
 /*--------- Footer -----------------*/
 footer{
-  width: 100%;
-  height: 33%;
-  background-color: var(--text-color-light);
+  background-color: var(--container-color);
+  margin-top: 5rem;
 }
+.foot{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 40%;
+  width: 100%;
+  background-color: var(--container-color);
+  height: 100%;
+  
+}
+.sectionContain{
+  width: 100%;
+  height: auto;
+  text-align: left;
+ margin:  auto;
+
+}
+.social>i{
+ gap: 3rem;
+ 
+ cursor: pointer;
+}
+li{
+  list-style: none;
+  cursor: pointer;
+}
+
+.totales{
+  width: 100%;
+    height: 20px;
+    font-size: 18px;
+    position: absolute;
+    top: 80%;
+   padding: 2rem;
+    color: var(--first-color);
+    display: flex;
+    justify-content: space-between;
+}
+ .totalProduct{
+  display: flex;
+  justify-content: space-between;
+ }
+ .totalPrice{
+  display: flex;
+  justify-content: space-between;
+ }
+.menuNav{
+  display: none;
+}
+
+
+
 
 /*Aqui se hace la animacion de la imagen de cargado*/
  @keyframes load{
@@ -315,5 +513,129 @@ footer{
   }
   100%{
       top: 0;
+  }
+}
+
+i:hover{
+  cursor: pointer;
+}
+@media screen and (min-width: 650px) {
+  .container{
+    max-width: 500px;
+  }
+  .img-container{
+
+    left: 40%;
+   
+  }
+  .btnAdd{
+    top: 87px;
+  }
+  .menu-con>ul{
+    justify-content: left;
+    left: -61px;
+  }
+}
+@media screen and (min-width: 850px) {
+  .container{
+    max-width: 800px;
+  }
+  .img-container{
+    width: 50%;
+    left: 30%;
+  
+  }
+  .nav{
+    max-width: 900px;
+  }
+  .menu-cont{
+    width: 50px;
+    height: 60px;
+    background-color: var(--body-color);
+    position: absolute;
+    left: 25%;
+    z-index: 0;
+  }
+ 
+  .menu-cont.hide{
+    display: flex;
+  }
+  .menu-cont>ul{
+    display: none;
+  }
+  .x--menu{
+    display: none;
+  }
+  .menuArea{
+    display: none;
+  }
+  .text-container{
+    left: -210px;
+    position: relative;
+    top: -350px;
+  }
+  .first-img{
+    position: relative;
+    left: 0;
+  }
+  .product-lsit{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .contain-filter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .hoodies{
+    grid-area: hoodies ;
+  }
+  .shirts{
+    grid-area: shirts ;
+  }
+  .sweatshirts{
+    grid-area: sweatshirts ;
+  }
+  .discBtn{
+    width: 200px;
+    height: 50px;
+  }
+  .addBtn{
+    width:300px;
+    height: 60px;
+  }
+  #products-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+  }
+  .info-CardProduct{
+    display: flex;
+    justify-content: space-around;
+  }
+  .foot{
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--container-color);
+    padding: 0;
+  }
+  .social>i{
+    gap: 3rem;
+    display: inline-block;
+  }
+  .menuNav{
+    display: flex;
+    position: relative;
+    left: -170px;
+    gap: 2rem;
+    z-index: 2;
   }
 }
