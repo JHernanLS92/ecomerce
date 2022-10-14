@@ -91,9 +91,7 @@ const showProducts = () => {
          <div class="div-img-product-main">
             <img src="${producto.image}" alt="" class="img-product">
           </div>
-
-          <i class='bx bx-plus-circle bx-md btnAdd-main' ></i>
-
+          <i class='bx bxs-plus-circle  bx-md btnAdd-main'></i>
           <div clas="info-CardProduct">
             <h2 clas="h-cardProduct">$ ${producto.price}.00</h2>
             <h2 clas="h-cardProduct">Stock: ${producto.quantity}</h2>
@@ -170,7 +168,7 @@ const showProductsInCart = () => {
             <p id ="price" class=" price txt-red"> $${prod.price}.00</p>
             <div class="addToCart"> 
               <div> 
-                  <i class='bx bx-down-arrow-alt' id="less"></i>
+                <i class='bx bxs-minus-circle' id="less"></i>
               </div>
                
               <div> 
@@ -178,7 +176,7 @@ const showProductsInCart = () => {
               </div>
 
               <div> 
-                <i class='btn bx bx-up-arrow-alt' id="more"></i>
+                <i class='bx bxs-plus-circle' id="more"></i>
               </div>
             </div>
             <p class="text-red">Subtotal: $${prod.cantidad * prod.price}.00</p>
@@ -198,8 +196,10 @@ const showProductsInCart = () => {
     cartCantidad.innerHTML = cantidad
     cartTotal.innerHTML = total
     cartContainerSelected.innerHTML = fragment
-
+    
 }
+
+
 
 /**Esta funcion ejecuta las funciones al cargar la pagina */
 document.addEventListener( "DOMContentLoaded", () =>{
@@ -208,4 +208,3 @@ document.addEventListener( "DOMContentLoaded", () =>{
 })
 
 
- 
