@@ -102,7 +102,9 @@ footer{
 .loader.hide{
   display: none;
 }
-
+.hide{
+  display: none;
+}
 .loader--img{
   width: 100px;
   fill: var(--first-color);
@@ -307,6 +309,19 @@ footer{
 .text-red{
   color: var(--first-color);
 }
+.addToCart{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+#emptyCart{
+  width: 100%;
+  max-width: 300px;
+}
+#emptyCart>img{
+  width: 300px;
+}
 /*========================================*/
 /*=== Seccion de los totales carrito =====*/
 .totales{
@@ -314,8 +329,8 @@ footer{
     height: 20px;
     font-size: 18px;
     position: absolute;
-    top: 80%;
-   padding: 2rem;
+    top: 90%;
+    padding: 2rem;
     color: var(--first-color);
     display: flex;
     justify-content: space-between;
@@ -335,7 +350,7 @@ footer{
 }
 .img-cartProduct{
  background-color: var(--body-color);
- width: 100px;
+ width: 100%;
 }
 /*========================================*/
 /*====== Seccion del main principal ======*/
